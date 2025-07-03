@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
       headerDown.style.marginTop = `-${headerDownHeight}px`;
     } else {
       headerMiddle.classList.remove('pos-fixed');
-      headerDown.style.marginTop = '0';
+      headerDown.style.marginTop = '';
     }
   })
 })

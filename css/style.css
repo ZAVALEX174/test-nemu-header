@@ -40,9 +40,11 @@ body {
   white-space: nowrap;
 }
 
-.btn:hover {
-  opacity: 0.8;
-  transition: background-color 0.2s linear;
+@media (hover: hover) and (pointer: fine) {
+  .btn:hover {
+    opacity: 0.8;
+    transition: background-color 0.2s linear;
+  }
 }
 
 .btn:focus-visible {
@@ -92,10 +94,6 @@ body {
   color: var(--color-primary);
   transition: color 0.3s linear;
 }
-
-/* .navigation-callback { */
-/* margin-right: auto; */
-/* } */
 
 .navigation-callback a {
   display: flex;
@@ -168,9 +166,7 @@ body {
   background: white;
   transition: animation 0.2s linear;
   animation: slideDown 0.5s ease;
-  max-width: 1390px;
-  margin: 0 auto;
-  padding: 0 15px;
+  align-items: center;
 }
 
 .logo {
@@ -340,10 +336,10 @@ body {
 }
 
 .counter-el {
+  display: none;
   position: absolute;
   width: 26px;
   height: 26px;
-  display: flex;
   align-items: center;
   justify-content: center;
   background-color: var(--color-primary);
@@ -356,31 +352,85 @@ body {
   transform: translate(-50%, 40%);
 }
 
+.counter-el.counter-el-select {
+  display: flex;
+}
+
 .header__down {
   position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   opacity: 1;
-  transform: translateY(0);
-  /*transition: opacity 1s linear, transform 1s linear;*/
+  margin-top: -40px;
+  z-index: 101;
   max-height: 10000px;
-  padding: 8px calc((100% - 1390px) / 2);
+  padding: 8px calc((100% - 1390px) / 2) 24px;
 }
 
 .header__down .menu-list {
   display: flex;
   list-style: none;
-  padding: 0;
-  margin: 0;
+  padding: 0 0 0 15px;
+  margin: 0 0 0 120px;
+  gap: 18px;
 }
 
-/* .header__container {
-  max-width: 1390px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 15px;
-} */
+.header__down .menu-list a {
+  text-decoration: none;
+  background-color: #F4F4F4;
+  padding: 11px 13px 11px 16px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--color-darck-text);
+  transition: color 0.3s linear;
+}
+
+.header__down .menu-list a:hover {
+  color: var(--color-primary);
+  transition: color 0.3s linear;
+}
+
+.header__down .menu-list a:hover svg path {
+  color: var(--color-primary);
+  fill-opacity: 1;
+  transition: color 0.3s linear, fill-opacity 0.3s linear;
+}
+
+.collect {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  padding: 11px 6px;
+  background-color: #F4F4F4;
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--color-primary);
+  transition: color 0.3s linear, background-color 0.3s linear;
+  text-decoration: none;
+}
+
+.collect:hover {
+  color: #F4F4F4;
+  background-color: var(--color-primary);
+  transition: color 0.3s linear, background-color 0.3s linear;
+}
+
+.collect svg {
+  margin-right: 7px;
+  stroke: var(--color-primary);
+  transition: color 0.3s linear;
+}
+
+.collect:hover svg {
+  margin-right: 7px;
+  stroke: var(--color-light-text);
+  transition: color 0.3s linear;
+}
 
 .hero {
   width: 100%;
@@ -389,7 +439,7 @@ body {
   transition: margin-top 0.5s ease;
 
   /*////////*/
-  min-height: 200vh;
+  min-height: 740px;
 }
 
 .hero .title,
