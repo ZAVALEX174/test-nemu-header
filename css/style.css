@@ -275,6 +275,86 @@ body {
   transition: color 0.3s linear;
 }
 
+.lang {
+  display: flex;
+  margin-right: 53px;
+  min-height: 48px;
+  align-items: center;
+}
+
+.lang-btn {
+  background-color: transparent;
+  border: none;
+  padding: 0 4px;
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 16px;
+  opacity: 0.4;
+  color: var(--color-darck-text);
+  transition: color 0.3s linear;
+}
+
+.lang-btn:hover {
+  color: var(--color-primary);
+  transition: color 0.3s linear;
+  opacity: 1;
+}
+
+.lang-btn__selected {
+  opacity: 1;
+}
+
+.btn-page {
+  background-color: transparent;
+  height: 48px;
+  width: 48px;
+  border: 1px solid #d3d3d3;
+  border-radius: 4px;
+  margin-right: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: border-color 0.3s linear;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.btn-page:last-child {
+  margin-right: 15px;
+}
+
+.btn-page svg {
+  color: var(--color-darck-text);
+  transition: color 0.3s linear;
+}
+
+.btn-page:hover {
+  border-color: var(--color-primary);
+  transition: color 0.3s linear;
+}
+
+.btn-page:hover svg {
+  color: var(--color-primary);
+  transition: color 0.3s linear;
+}
+
+.counter-el {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-primary);
+  border-radius: 50%;
+  color: var(--color-light-text);
+  font-weight: 400;
+  font-size: 13px;
+  top: -50%;
+  right: -50%;
+  transform: translate(-50%, 40%);
+}
 
 .header__down {
   position: relative;
