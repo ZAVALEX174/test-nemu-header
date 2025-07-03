@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let headerMiddleHeight = headerMiddle.offsetHeight;
   let scrollTop = 0;
 
-    catalog.style.top = `${header.offsetHeight}px`;
+  catalog.style.top = `${header.offsetHeight}px`;
 
   window.addEventListener('scroll', () => {
     scrollTop = window.scrollY;
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
       heroSection.style.marginTop = `(${headerDownHeight} + ${headerMiddleHeight})px`;
       headerDown.style.marginTop = `-${headerDownHeight}px`;
       catalog.style.top = `${headerMiddleHeight}px`;
-      
+
     } else {
       headerMiddle.classList.remove('pos-fixed');
       headerDown.style.marginTop = '';
@@ -30,22 +30,41 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   })
 
-  const openCatalog = function() {
+  const openCatalog = function (e) {
+    e.stopPropagation();
     catalog.style.display = 'flex';
     openCatalogBtn.style.display = 'none';
     closeCatalogBtn.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
   }
-  
-  const closeCatalog = function() {
+
+  const closeCatalog = function (e) {
+    if (e) e.stopPropagation();
     catalog.style.display = 'none';
     closeCatalogBtn.style.display = 'none';
     openCatalogBtn.style.display = 'flex';
-    
+    document.body.style.overflow = 'auto';
   }
-  
+
+  window.addEventListener('click', (e) => {
+    if (!e.target.closest('.catalog-list') &&
+      !e.target.closest('.catalog-open')) {
+      closeCatalog();
+    }
+  });
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    closeCatalog();
+  }
+});
 
   openCatalogBtn.addEventListener('click', openCatalog);
   closeCatalogBtn.addEventListener('click', closeCatalog);
-  
+
+
+  openCatalogBtn.addEventListener('click', openCatalog);
+  closeCatalogBtn.addEventListener('click', closeCatalog);
+
 
 })
