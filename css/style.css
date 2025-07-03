@@ -1,0 +1,187 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+:root {
+  --color-primary: #4888ff;
+  --color-darck-text: #343a3f;
+  --color-light-text: #ffffff;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Maza', sans-serif;
+  color: var(--color-darck-text);
+}
+
+.container {
+  max-width: 1250px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.btn {
+  border-radius: 4px;
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--color-light-text);
+  cursor: pointer;
+  padding: 11px 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-primary);
+  transition: background-color 0.2s linear;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+
+.btn:hover {
+  opacity: 0.8;
+  transition: background-color 0.2s linear;
+}
+
+.btn:focus-visible {
+  opacity: 0.8;
+  transition: background-color 0.2s linear;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-light-text);
+}
+
+.header__top {
+  grid-area: top;
+  display: flex;
+  align-items: center;
+  padding: 8px 0;
+  justify-content: space-between;
+}
+
+.header__top .navigation-pages {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.logo {
+
+}
+
+.header__middle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  background-color: var(--color-light-text);
+  transition: animation 0.2s linear;
+}
+
+.header__middle.pos-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+  background: white;
+  transition: animation 0.2s linear;
+  animation: slideDown 0.5s ease;
+  max-width: 1390px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.header__down {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  opacity: 1;
+  transform: translateY(0);
+  /*transition: opacity 1s linear, transform 1s linear;*/
+  max-height: 10000px;
+}
+
+.header__down .menu-list {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.header__container {
+  max-width: 1390px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.hero {
+  width: 100%;
+  background: url(../img/gamepad.png) top right/contain no-repeat, linear-gradient(135deg, #672870 20%, #4fe0ff 100%);
+  padding: 84px 0;
+
+  /*////////*/
+  min-height: 200vh;
+}
+
+.hero .title, .hero .subtitle {
+  max-width: 640px;
+  width: 100%;
+  font-family: 'TenorSans', sans-serif;
+  color: var(--color-light-text);
+  margin-bottom: 26px;
+  text-align: left;
+}
+
+.hero .btn.hero__btn {
+  background-color: var(--color-light-text);
+  font-size: 16px;
+  line-height: 125%;
+  color: #672870;
+  padding: 16px 40px;
+  text-decoration: none;
+}
+
+.catalog-close {
+  display: none;
+}
+
+
+/*!* Добавляем в CSS *!*/
+/*.header__top {*/
+/*  transition: opacity 1s linear, transform 1s linear, max-height 1s linear;*/
+/*  max-height: 1000px; !* Достаточно большое значение *!*/
+/*  overflow: hidden;*/
+/*}*/
+
+/*.header__middle.fixed {*/
+/*  position: fixed;*/
+/*  top: 0;*/
+/*  left: 0;*/
+/*  width: 100%;*/
+/*  z-index: 1000;*/
+/*  background: white;*/
+/*  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);*/
+/*  animation: slideDown 0.5s ease;*/
+/*}*/
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.hero {
+  transition: margin-top 0.5s ease;
+}
