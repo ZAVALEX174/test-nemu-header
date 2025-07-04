@@ -86,11 +86,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-
-
   firstTabList.forEach((firstTab) => {
     firstTab.addEventListener('click', (e) => {
-      // 1. Снимаем выделение со всех элементов и скрываем все списки
+
       firstTabList.forEach(tab => {
         tab.classList.remove('catalog-item-selected');
         const drop = tab.querySelector('.catalog-list-dropdonw');

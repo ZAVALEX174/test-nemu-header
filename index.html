@@ -1181,7 +1181,7 @@
 </div>
 <main>
   <section class="hero">
-    <div class="container">
+    <div class="hero__text">
       <h1 class="title">
         Отправляйся в приключения с нашими эпическими лут-корзинами и
         наборами!
@@ -1200,6 +1200,26 @@
       >
         В каталог
       </a>
+    </div>
+    <div class="hero__img">
+      <picture>
+        <!-- Для экранов меньше 1280px -->
+        <source
+          media="(max-width: 1280px)"
+          srcset="img/gamepad_mob.png"
+        >
+        <!-- Для экранов 1280px и больше -->
+        <source
+          media="(min-width: 1281px)"
+          srcset="img/gamepad.png"
+        >
+        <!-- старых браузеров -->
+        <img
+          src="img/gamepad.png"
+          alt="Геймпад"
+          loading="lazy"
+        >
+      </picture>
     </div>
   </section>
 </main>
