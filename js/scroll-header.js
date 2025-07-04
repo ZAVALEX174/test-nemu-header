@@ -91,4 +91,47 @@ document.addEventListener("DOMContentLoaded", () => {
       if (currentDrop) currentDrop.classList.remove('none');
     });
   });
+
+  // перенос элементов
+  const address = document.querySelector('.navigation-address');
+  const pages = document.querySelector('.navigation-pages');
+  const social = document.querySelector('.social');
+  const logo = document.querySelector('.logo');
+  const workingHours = document.querySelector('.navigation-working-hours');
+  const headerMobile = document.querySelector('.header__mobile-wrapper');
+
+  const mediaQuery = window.matchMedia('(max-width: 1024px)')
+
+  // Функция-обработчик изменений
+  function handleTabletChange(e) {
+    if (e.matches) {
+      console.log('я меньше 1024');
+      headerMobile.appendChild(address);
+      headerMobile.appendChild(headerDown);
+      headerMobile.appendChild(workingHours);
+      headerMobile.appendChild(pages);
+      headerMobile.appendChild(social);
+      console.log(headerDown);
+      console.log(headerMobile);
+
+
+    } else {
+      console.log('я больше 1025');
+      console.log(headerDown);
+      headerTop.prepend(address);
+      headerTop.append(workingHours);
+      headerTop.append(pages);
+      headerMiddle.append(social);
+      header.append(headerDown);
+      console.log(headerDown);
+    }
+  }
+
+// Инициализация при загрузке
+  handleTabletChange(mediaQuery);
+
+// Слушатель изменений
+  mediaQuery.addEventListener('change', handleTabletChange);
+
+
 })
