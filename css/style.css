@@ -824,6 +824,10 @@ body {
   display: none;
 }
 
+.menu-list-drop-2 span {
+  color: #d3d3d3;
+}
+
 @media (max-width: 1280px) {
   .logo {
     margin-right: 16px;
@@ -1200,6 +1204,26 @@ body {
   .header__down .menu-list .menu-item-drop a + ul {
     top: 100%;
     width: 100%;
+  }
+
+  .header__down .menu-list .menu-item-drop:hover > ul {
+    width: 100%;
+    border-radius: 16px;
+    backdrop-filter: blur(2px);
+    background-color: var(--color-light-text);
+    box-shadow: 0 0 2px var(--color-darck-text);
+  }
+
+  .header__down .menu-list .menu-item-drop a + ul li:hover a + .menu-list-drop-2 {
+    right: 0;
+    width: 100%;
+    top: 100%;
+    border-radius: 16px;
+    backdrop-filter: blur(2px);
+    background-color: var(--color-light-text);
+    box-shadow: 0 0 2px var(--color-darck-text);
+    height: 100%;
+    gap: 5px;
   }
 }
 
