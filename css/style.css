@@ -222,7 +222,7 @@ body {
 .catalog-list {
   display: none;
   flex-direction: column;
-  padding: 30px;
+  padding: 15px 0 15px 0;
   list-style: none;
   margin: 0;
   border-radius: 8px;
@@ -234,27 +234,171 @@ body {
   position: absolute;
 }
 
+.catalog-item {
+  padding-left: 30px;
+  padding-right: 30px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #f3f3f3;
+  max-width: 340px;
+  width: 100%;
+  transition: background-color 0.3s linear;
+  cursor: pointer;
+}
+
+.catalog-item .catalog-link-icon, .catalog-item svg {
+  transition: background-color 0.3s linear;
+}
+
+.catalog-item:hover {
+  background-color: #f3f3f3;;
+  transition: background-color 0.3s linear;
+}
+
+.catalog-item:hover svg {
+  color: var(--color-primary);
+  transition: background-color 0.3s linear;
+}
+
+.catalog-item:hover .catalog-link-icon g path, .catalog-item:hover .catalog-link-icon path {
+  fill-opacity: 1;
+  transition: fill-opacity 0.3s linear;
+}
+
+.catalog-item-selected {
+  background-color: #f3f3f3;;
+}
+
+.catalog-item-selected svg,
+.catalog-item-selected .catalog-link-icon g path,
+.catalog-item-selected .catalog-link-icon path {
+  color: var(--color-primary);
+  fill-opacity: 1;
+}
+
+.catalog-list .dropdown-two-list li a:hover,
+.catalog-list .dropdown-two-list li a:hover span {
+  color: var(--color-primary);
+  transition: color 0.3s linear;
+}
+
+.dropdown-two-list li a svg {
+  color: var(--color-darck-text);
+}
+
+.catalog-link {
+  padding: 13px 0 13px 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--color-darck-text);
+}
+
+.catalog-link svg:last-child {
+  margin-left: auto;
+}
+
+.catalog-link svg.catalog-link-icon {
+  margin-right: 16px;
+  margin-left: 0;
+}
+
 .catalog-list-dropdonw {
   position: absolute;
-  width: calc(((100% - 50px) / 3) * 2);
-  top: 30px;
-  right: 30px;
+  width: calc(100% - 400px);
+  top: 15px;
+  right: 15px;
   padding: 0;
   list-style: none;
   display: flex;
-  z-index: 5;
+  /*z-index: 5;*/
+  column-gap: 40px;
 }
 
 .catalog-list-dropdonw-item {
-  width: 50%;
+  width: 100%;
+  font-weight: 400;
+  font-size: 30px;
+  color: var(--color-darck-text);
+  /*margin-bottom: 14px;*/
 }
 
-.catalog-list-dropdonw-item ul {
+.catalog-list-dropdonw-item .dropdown-two-list {
   display: flex;
   flex-direction: column;
-  padding: 0;
+  padding: 20px 0 0 0;
   margin: 0;
   list-style: none;
+  gap: 16px;
+}
+
+.catalog-list-dropdonw-item .dropdown-two-list li {
+  padding: 0;
+  margin: 0;
+}
+
+.catalog-list-dropdonw-item .dropdown-two-list li a {
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--color-darck-text);
+  display: flex;
+  align-items: baseline;
+}
+
+.catalog-list-dropdonw-item .dropdown-two-list li a span {
+  display: block;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 14px;
+  color: rgba(52, 58, 63, 0.5);
+  margin-left: 10px
+}
+
+.catalog-list-dropdonw-item .dropdown-two-list li a svg {
+  margin-left: auto;
+  color: var(--color-darck-text);
+  transition: color 0.2s linear;
+}
+
+.catalog-list-dropdonw-item .dropdown-two-list li a:hover svg {
+  color: var(--color-primary);
+  transition: color 0.2s linear;
+}
+
+.dropdown-two-list .dropdown-three-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  left: auto;
+  height: 100%;
+  max-width: 226px;
+  width: 100%;
+  background: var(--color-light-text);
+  /*display: flex;*/
+  display: none;
+  flex-direction: column;
+}
+
+.dropdown-two-list .dropdown-three-list li {
+  background: var(--color-light-text);
+  z-index: 10;
+  position: relative;
+  padding: 8px;
+}
+
+.dropdown-two-list .dropdown-three-list li a {
+  position: relative;
+  background: var(--color-light-text);
+  z-index: 10;
+  margin: 0;
+  color: var(--color-darck-text);
 }
 
 .search {
@@ -459,6 +603,7 @@ body {
   color: var(--color-primary);
   transition: color 0.3s linear, background-color 0.3s linear;
   text-decoration: none;
+  margin-right: 15px;
 }
 
 .collect:hover {
@@ -507,7 +652,6 @@ body {
   padding: 16px 40px;
   text-decoration: none;
 }
-
 
 
 /*!* Добавляем в CSS *!*/
