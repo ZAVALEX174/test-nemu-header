@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const openCatalogBtn = document.querySelector('.catalog-open');
   const closeCatalogBtn = document.querySelector('.catalog-close');
 
+  // скрытие и появление header
   let headerTopHeight = headerTop.offsetHeight;
   let headerDownHeight = headerDown.offsetHeight;
   let headerMiddleHeight = headerMiddle.offsetHeight;
@@ -30,6 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   })
 
+  // открытие и закрытие каталога
   const openCatalog = function (e) {
     e.stopPropagation();
     catalog.style.display = 'flex';
@@ -53,18 +55,40 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') {
-    closeCatalog();
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      closeCatalog();
+    }
+  });
+
+  openCatalogBtn.addEventListener('click', openCatalog);
+  closeCatalogBtn.addEventListener('click', closeCatalog);
+
+  // открытие и закрытие выпадающего меню
+  const firstTabList = catalog.querySelectorAll('.catalog-item');
+  const dropLists = catalog.querySelectorAll('.catalog-list-dropdonw');
+
+  dropLists.forEach(drop => drop.classList.add('none'));
+
+  if (firstTabList.length > 0) {
+    firstTabList[0].classList.add('catalog-item-selected');
+    const firstDrop = firstTabList[0].querySelector('.catalog-list-dropdonw');
+    if (firstDrop) firstDrop.classList.remove('none');
   }
-});
 
-  openCatalogBtn.addEventListener('click', openCatalog);
-  closeCatalogBtn.addEventListener('click', closeCatalog);
+  firstTabList.forEach((firstTab) => {
+    firstTab.addEventListener('click', (e) => {
+      // 1. Снимаем выделение со всех элементов и скрываем все списки
+      firstTabList.forEach(tab => {
+        tab.classList.remove('catalog-item-selected');
+        const drop = tab.querySelector('.catalog-list-dropdonw');
+        if (drop) drop.classList.add('none');
+      });
 
+      firstTab.classList.add('catalog-item-selected');
 
-  openCatalogBtn.addEventListener('click', openCatalog);
-  closeCatalogBtn.addEventListener('click', closeCatalog);
-
-
+      const currentDrop = firstTab.querySelector('.catalog-list-dropdonw');
+      if (currentDrop) currentDrop.classList.remove('none');
+    });
+  });
 })
