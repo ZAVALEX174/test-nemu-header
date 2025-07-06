@@ -1098,6 +1098,7 @@ nav {
 
   .catalog-item {
     max-width: 100%;
+    width: 100%;
     background-color: #f4f4f4;
     margin-bottom: 10px;
     border-radius: 6px;
@@ -1117,6 +1118,8 @@ nav {
   }
 
   .header__down .btn.catalog-open#catalog-open {
+    max-width: 100%;
+    width: 100%;
     background: #f4f4f4 !important;
     justify-content: flex-start;
     padding: 11px 13px;
@@ -1340,6 +1343,14 @@ nav {
 
   nav .menu__list>li {
     width: 100%;
+  }
+
+  .menu__link {
+    justify-content: flex-start;
+  }
+
+  .menu__link svg {
+    display: flex;
   }
 }
 

@@ -109,6 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const logo = document.querySelector('.logo');
   const workingHours = document.querySelector('.navigation-working-hours');
   const headerMobile = document.querySelector('.header__mobile-wrapper');
+  const menuListBox = document.querySelector('.menu__list');
 
   const mediaQuery = window.matchMedia('(max-width: 1024px)');
 
@@ -136,7 +137,7 @@ document.addEventListener("DOMContentLoaded", () => {
       headerMobile.appendChild(workingHours);
       headerMobile.appendChild(pages);
       headerMobile.appendChild(social);
-      menuList.prepend(openCatalogBtn);
+      menuListBox.prepend(openCatalogBtn);
       catalog.prepend(closeCatalogBtn);
 
       window.removeEventListener('scroll', () => {
