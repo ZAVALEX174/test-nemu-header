@@ -1352,6 +1352,21 @@ nav {
   .menu__link svg {
     display: flex;
   }
+
+  .submenu__list-box {
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: translateX(0);
+  }
+
+  .submenu__list-box--small {
+    max-width: 450px;
+  }
+
+  .menu__item--larg {
+    z-index: 100;
+  }
 }
 
 @media (max-width: 768px) {

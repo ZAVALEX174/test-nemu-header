@@ -169,7 +169,7 @@ document.addEventListener("DOMContentLoaded", () => {
   subMenuIlem[0].classList.add("submenu__link--active");
 
   for (let z = 0; z < subMenuIlem.length; z++) {
-    subMenuIlem[z].nextElementSibling.style.zIndex = z + 1;
+    subMenuIlem[z].nextElementSibling.style.zIndex = z + 50;
   }
 
 // Добавляем обработчик для каждого элемента
