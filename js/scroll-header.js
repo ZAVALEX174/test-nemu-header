@@ -159,4 +159,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
   handleTabletChange(mediaQuery);
   mediaQuery.addEventListener('change', handleTabletChange);
+
+  const menu = document.querySelector(".menu__list");
+  const subMenu = menu.querySelector(".submenu__list-box--larg");
+  const subMenuIlem = subMenu.querySelectorAll(".submenu__link");
+  // const subMenuIlemLarg = subMenu.querySelectorAll(".submenu__item--larg");
+
+  subMenuIlem[0].classList.add("submenu__link--active");
+
+  for (let z = 0; z < subMenuIlem.length; z++) {
+    subMenuIlem[z].nextElementSibling.style.zIndex = z + 1;
+  }
+
+// Добавляем обработчик для каждого элемента
+  subMenuIlem.forEach(item => {
+    item.addEventListener('mouseenter', function() {
+      // 1. Удаляем активный класс у ВСЕХ элементов
+      subMenuIlem.forEach(el => el.classList.remove("submenu__link--active"));
+
+      // 2. Добавляем активный класс текущему элементу
+      this.classList.add("submenu__link--active");
+    });
+  });
+
 })
