@@ -736,6 +736,7 @@ nav {
   align-items: center;
   justify-content: space-between;
   position: relative;
+  gap: 10px;
 }
 
 .menu__link {
@@ -750,6 +751,7 @@ nav {
   font-size: inherit;
   color: inherit;
   transition: color 0.2s linear;
+  white-space: nowrap;
 }
 
 .menu__link:hover {
@@ -992,6 +994,14 @@ nav {
   .hero__text {
     padding-left: 15px;
     padding-right: 15px;
+  }
+
+  .menu__list {
+    width: auto;
+  }
+
+  .menu__link svg {
+    display: none;
   }
 }
 
@@ -1316,6 +1326,21 @@ nav {
     display: flex !important;
   }
 
+  nav {
+    max-width: 100%;
+    margin: 0;
+    margin-bottom: 10px;
+  }
+
+  nav .menu__list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  nav .menu__list>li {
+    width: 100%;
+  }
 }
 
 @media (max-width: 768px) {
