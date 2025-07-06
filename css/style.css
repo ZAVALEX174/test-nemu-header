@@ -44,6 +44,8 @@ body {
   white-space: nowrap;
 }
 
+.btn span {}
+
 @media (hover: hover) and (pointer: fine) {
   .btn:hover {
     opacity: 0.8;
@@ -1397,6 +1399,15 @@ nav {
     height: 14px;
   }
 
+  .catalog-list {
+    padding-bottom: 15px;
+    min-height: 150vh;
+  }
+
+  .catalog-list-dropdonw {
+    height: auto;
+  }
+
   .lang-btn {
     font-size: 14px;
     display: flex;
@@ -1429,5 +1440,34 @@ nav {
 
   .menu__list>li:hover>.menu__link+.submenu__list-box {
     position: relative;
+
+  }
+
+  .dropdown-three-wrapper:hover .dropdown-three-list {
+    position: relative;
+    max-width: 100%;
+    width: 100%;
+    margin-top: 20px;
+    padding-left: 0;
+    top: 0;
+    bottom: auto;
+    right: auto;
+    gap: 10px;
+  }
+
+  .catalog-list-dropdonw-item .dropdown-two-list li a,
+  .catalog-list-dropdonw-item .dropdown-two-list li div {
+    border-radius: 6px;
+  }
+
+  .dropdown-three-wrapper:hover .dropdown-three-list li {
+    border: 1px solid #f4f4f4;
+    border-radius: 6px;
+  }
+
+  .dropdown-two-list>li>a,
+  .dropdown-three-wrapper div {
+    background-color: #f4f4f4;
+    padding: 12px;
   }
 }
