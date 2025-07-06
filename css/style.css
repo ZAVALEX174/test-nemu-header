@@ -1367,6 +1367,19 @@ nav {
   .menu__item--larg {
     z-index: 100;
   }
+
+  .submenu2__list {
+    max-width: none;
+    width: auto;
+  }
+
+  .submenu__list>li.submenu__item--larg {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .submenu__link .submenu__arr {
+    margin-left: 20px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1390,5 +1403,31 @@ nav {
     align-items: center;
     justify-content: center;
     padding-top: 2px;
+  }
+
+  .submenu__list>li.submenu__item--larg {
+    display: flex;
+    flex-direction: column;
+  }
+
+  nav .menu__list>li {
+    position: relative;
+  }
+
+  .submenu2__list {
+    position: relative;
+  }
+
+  .submenu__list>li>.submenu__link.submenu__link--active+.submenu2__list {
+    top: 100%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .menu__list>li:hover>.menu__link+.submenu__list-box {
+    position: relative;
   }
 }
